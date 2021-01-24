@@ -1,0 +1,15 @@
+.country {
+  padding-top: 20px;
+
+  .chart {
+    width: 90%;
+    margin: 25px auto;
+  }
+}
+@media screen and(max-width:620px) {
+  .country {
+    .chart {
+      width: 100%;
+    }
+  }
+}

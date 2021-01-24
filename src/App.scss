@@ -1,0 +1,68 @@
+$darkBlue: rgb(20, 21, 24);
+body {
+  font-size: 15px;
+  background-color: $darkBlue;
+  font-family: "Open Sans", sans-serif;
+}
+div,
+span,
+p,
+a,
+nav,
+ul,
+li,
+section,
+header,
+footer,
+h1,
+h2,
+h3,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+.chart {
+  width: 600px;
+  color: rgba(99, 255, 213, 0.2);
+  margin: 0 auto;
+}
+.chart-pie {
+  width: 90%;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1d1d1d;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+}
+::-webkit-scrollbar {
+  height: 5px;
+  width: 7px;
+}
+
+@media screen and(max-width:1200px) {
+  .container {
+    width: 98%;
+  }
+}
+@media screen and(max-width:62px) {
+  body {
+    font-size: 14px;
+  }
+}
