@@ -8,8 +8,9 @@ const Login = () => {
 
   const handleTelegramResponse = () => {
     history.push(`/covid19/dashboard`);
-    localStorage.setItem("userLoginStatus", true);
+    localStorage.setItem("userLoginStatus", "true");
   };
+
   return (
     <div className="login">
       <div className="login-center">

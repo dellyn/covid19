@@ -9,17 +9,13 @@ import Select from "react-select";
 
 import "./CountriesSelect.scss";
 
-// type CountryDataType = {
-//   label: string;
-//   value: string;
-//   data: CountriesDataType;
-// };
 type CountriesDataType = {
   Country: string;
 };
 interface RootState {
   countriesData: any;
 }
+
 const CountriesSelect = () => {
   const dispatch = useDispatch();
 

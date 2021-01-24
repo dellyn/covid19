@@ -11,6 +11,8 @@ interface RootState {
   countryData: any;
   countryStats: any;
 }
+const pathToBack: string = "http://localhost/covid19/dashboard";
+
 const Country = () => {
   const dispatch = useDispatch();
 
@@ -21,7 +23,7 @@ const Country = () => {
 
   useEffect(() => {
     const countryName: string = countryData.Slug;
-    
+
     getCountryStatsFromDay(countryName).then((data) => {
       dispatch(setCountryStats(data));
     });
@@ -34,6 +36,9 @@ const Country = () => {
     <div className="country">
       <div className="container">
         <h1 className="country-title">{countryName}</h1>
+        <a href={pathToBack} className="link">
+          Back
+        </a>
         <ChartLine />
       </div>
     </div>

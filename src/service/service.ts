@@ -1,6 +1,22 @@
 const url: string = process.env.REACT_APP_API_BASE!;
 const summaryUrl = `${url}summary`;
 
+type SummaryDataType = {
+  ID: string;
+  Countries: GlobalInterface[];
+  Global: GlobalInterface;
+};
+interface GlobalInterface {
+  ID: string;
+  Country: string;
+}
+interface CountryStats {
+  Confirmed: number;
+  Deaths: number;
+  Recovered: number;
+  Date: string;
+}
+
 const getResource = async (url: string) => {
   const res = await fetch(url);
   if (!res.ok) {
@@ -24,22 +40,6 @@ export const getCountryStatsFromDay = async (countryName: string) => {
 
   return transformCountryStatsFromDay(res);
 };
-
-type SummaryDataType = {
-  ID: string;
-  Countries: GlobalInterface[];
-  Global: GlobalInterface;
-};
-interface GlobalInterface {
-  ID: string;
-  Country: string;
-}
-interface CountryStats {
-  Confirmed: number;
-  Deaths: number;
-  Recovered: number;
-  Date: string;
-}
 
 const transformCountriesData = (data: SummaryDataType) => {
   const { ...countries } = data.Countries;

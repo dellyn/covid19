@@ -10,18 +10,19 @@ import ErrorBoundary from "../Error/ErrorBoundary";
 
 import "./Dashboard.scss";
 
+type GlobalDataType = {
+  count: number;
+  title: string;
+};
+interface RootState {
+  globalData: GlobalDataType[];
+}
+
 const Dashboard = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
 
-  type GlobalDataType = {
-    count: number;
-    title: string;
-  };
-  interface RootState {
-    globalData: GlobalDataType[];
-  }
   const globalData = useSelector((state: RootState) => state.globalData);
 
   useEffect(() => {
@@ -50,8 +51,7 @@ const Dashboard = () => {
   if (loading && !error) return <Preloader />;
   else if (error) return <ErrorIndicator />;
 
-  const gridList = globalData.map((data: GlobalDataType) => {
-    const { title, count } = data;
+  const gridList = globalData.map(({ title, count }: GlobalDataType) => {
     return (
       <div className="grid-square" key={title}>
         <div className="grid-square-content">
